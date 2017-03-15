@@ -11,8 +11,8 @@ node {
         sh "docker build -t taimos/serverless-build:${version} ."
     }
     stage('Publish') {
-        sh "docker tag taimos/serverless:${version} taimos/serverless:latest"
-        sh "docker push taimos/serverless:${version}"
-        sh "docker push taimos/serverless:latest"
+        sh "docker tag taimos/serverless-build:${version} taimos/serverless-build:latest"
+        sh "docker push taimos/serverless-build:${version}"
+        sh "docker push taimos/serverless-build:latest"
     }
 }
